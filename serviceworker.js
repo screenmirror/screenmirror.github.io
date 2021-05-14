@@ -23,7 +23,10 @@ const PRECACHE_URLS = [
     './', // Alias for index.html
     'js/main.js',
     'js/adapter-latest.js',
-    '404.html'
+    '404.html',
+    'screen.png',
+    'favicon.ico',
+    'manifest.json'
 ];
 
 // The install handler takes care of precaching the resources we always need.

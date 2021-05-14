@@ -11,12 +11,15 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="WebRTC code samples">
+  <meta name="description"
+    content="Screen mirror - Simple, tiny web app to mirror windows / desktops / webcam locally. Works offline.">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
-  <meta itemprop="description" content="Client-side WebRTC code samples">
-  <meta itemprop="name" content="WebRTC code samples">
+  <meta itemprop="description"
+    content="Screen mirror - Simple, tiny web app to mirror windows / desktops / webcam locally. Works offline.">
+  <meta itemprop="name" content="Screen mirror">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta id="theme-color" name="theme-color" content="#ffffff">
+  <meta id="theme-color" name="theme-color" content="#000000">
+  <link rel="manifest" href="js13kpwa.webmanifest">
 
   <base target="_blank">
 
@@ -31,11 +34,10 @@
 
     <video id="gum-local" style="width: 90%" autoplay playsinline muted controls></video>
     <br />
-    <button id="startButton" disabled>Start</button>
+    <button id="startButton" style="width: 90%; height: 2rem;" disabled>Start</button>
 
-    <h2> Use this simple screen mirror to mirror desktops/windows to multiple windows </h2>
-    <p> </p>
-
+    <h1> Simple, tiny web app to mirror windows / desktops / webcam locally </h1>
+    <h2> No internet connection needed. Works offline after first visit </h2>
     <div id="errorMsg"></div>
 
   </div>
