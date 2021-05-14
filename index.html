@@ -7,6 +7,7 @@
  *  tree.
 -->
 <html>
+
 <head>
 
   <meta charset="utf-8">
@@ -21,30 +22,33 @@
 
   <title>Screen Mirror</title>
 
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
 
-  <div id="container">
+  <div>
 
     <video id="gum-local" style="width: 90%" autoplay playsinline muted controls></video>
     <br />
     <button id="startButton" disabled>Start</button>
 
     <h2> Use this simple screen mirror to mirror desktops/windows to multiple windows </h2>
+    <p> </p>
 
     <div id="errorMsg"></div>
-    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>getDisplayMedia</span></h1>
 
-    <p>Display the screensharing stream from <code>getDisplayMedia()</code> in a video element.</p>
-
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/getdisplaymedia" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
   </div>
 
-  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <!-- <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script> -->
+  <script src="js/adapter-latest.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('serviceworker.js', { scope: '/' })
+    }
+  </script>
 
 </body>
+
 </html>
