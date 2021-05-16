@@ -40,12 +40,34 @@ function errorMsg(msg, error) {
 
 const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', () => {
-  navigator.mediaDevices.getDisplayMedia({video: true})
-      .then(handleSuccess, handleError);
+  navigator.mediaDevices.getDisplayMedia({ video: true })
+    .then(handleSuccess, handleError);
 });
 
 if ((navigator.mediaDevices && 'getDisplayMedia' in navigator.mediaDevices)) {
   startButton.disabled = false;
 } else {
   errorMsg('getDisplayMedia is not supported');
+}
+
+
+
+function PlaybackMic() {
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+  var aCtx;
+  var analyser;
+  var microphone;
+  if (navigator.getUserMedia) {
+    navigator.getUserMedia(
+      { audio: true },
+      function (stream) {
+        aCtx = new AudioContext();
+        microphone = aCtx.createMediaStreamSource(stream);
+        var destination = aCtx.destination;
+        microphone.connect(destination);
+      },
+      function () { console.log("Error 003.") }
+    );
+  }
 }
