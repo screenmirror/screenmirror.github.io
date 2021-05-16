@@ -62,10 +62,16 @@ function PlaybackMic() {
     navigator.getUserMedia(
       { audio: true },
       function (stream) {
-        aCtx = new AudioContext();
+
+        aCtx = new (window.AudioContext || window.webkitAudioContext)();
+        // aCtx = new AudioContext();
+
+        window.AudioContext.
         microphone = aCtx.createMediaStreamSource(stream);
         var destination = aCtx.destination;
         microphone.connect(destination);
+
+
       },
       function () { console.log("Error 003.") }
     );
